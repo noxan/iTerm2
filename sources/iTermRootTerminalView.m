@@ -18,7 +18,9 @@
 
 const CGFloat kHorizontalTabBarHeight = 22;
 const CGFloat kDefaultLeftTabsWidth = 150;
-const CGFloat kDivisionViewHeight = 1;
+
+// Set to 0 so we dont get the 1 pixel line on top
+const CGFloat kDivisionViewHeight = 0;
 
 static const CGFloat kDefaultToolbeltWidth = 250;
 static const CGFloat kMinimumToolbeltSizeInPoints = 100;

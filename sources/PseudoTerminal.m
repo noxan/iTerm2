@@ -330,8 +330,10 @@ static NSString* TERMINAL_ARRANGEMENT_HIDING_TOOLBELT_SHOULD_RESIZE_WINDOW = @"H
         case WINDOW_TYPE_BOTTOM_PARTIAL:
         case WINDOW_TYPE_LEFT_PARTIAL:
         case WINDOW_TYPE_RIGHT_PARTIAL:
-        case WINDOW_TYPE_NO_TITLE_BAR:
             return NSBorderlessWindowMask | NSResizableWindowMask;
+            
+        case WINDOW_TYPE_NO_TITLE_BAR:
+            return NSFullSizeContentViewWindowMask | NSResizableWindowMask | NSTitledWindowMask | NSTexturedBackgroundWindowMask | NSMiniaturizableWindowMask;
 
         case WINDOW_TYPE_TRADITIONAL_FULL_SCREEN:
             return NSBorderlessWindowMask;
@@ -544,6 +546,12 @@ static NSString* TERMINAL_ARRANGEMENT_HIDING_TOOLBELT_SHOULD_RESIZE_WINDOW = @"H
     }
 
     [myWindow setHasShadow:(windowType == WINDOW_TYPE_NORMAL)];
+    
+    // If the style is borderless rounded...
+    if(windowType == WINDOW_TYPE_NO_TITLE_BAR) {
+        // Enable the shadow
+        [myWindow setHasShadow:true];
+    }
 
     DLog(@"Create window %@", myWindow);
 
@@ -595,6 +603,13 @@ static NSString* TERMINAL_ARRANGEMENT_HIDING_TOOLBELT_SHOULD_RESIZE_WINDOW = @"H
 
     [self updateTabBarStyle];
     self.window.delegate = self;
+    
+    // If the window type is borderless rounded...
+    if(windowType == WINDOW_TYPE_NO_TITLE_BAR) {
+        // Hide the titlebar
+        NSButton * closeButton = [[self window] standardWindowButton:NSWindowCloseButton];
+        [[[closeButton superview] superview] removeFromSuperview];
+    }
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateWindowNumberVisibility:)
