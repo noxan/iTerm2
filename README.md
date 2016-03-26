@@ -1,7 +1,5 @@
-This site hosts code for <a href="https://iterm2.com">iTerm2</a>.
+A branch of iTerm2 that has borderless rounded
 
-[![Build Status](https://travis-ci.org/gnachman/iTerm2.svg?branch=master)](https://travis-ci.org/gnachman/iTerm2)
-[![Coverage Status](https://coveralls.io/repos/github/gnachman/iTerm2/badge.svg?branch=master)](https://coveralls.io/github/gnachman/iTerm2?branch=master)
+<img src="https://a.pomf.cat/kspcgj.png">
 
-<a href="https://iterm2.com/bugs">File a bug report here!</a> Issues are on <a href="https://gitlab.com/gnachman/iterm2/issues">Gitlab</a> because Github doesn't support issue attachments.
-
+To use, simply select ``` No Title Bar ``` as the style for your window in your profile
