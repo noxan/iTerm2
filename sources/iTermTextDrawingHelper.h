@@ -13,10 +13,10 @@
 #import "VT100GridTypes.h"
 
 // Number of pixels margin on left and right edge.
-#define MARGIN 25
+#define MARGIN 14
 
 // Number of pixels margin on the top.
-#define VMARGIN 25
+#define VMARGIN 14
 
 @class iTermColorMap;
 @class iTermFindOnPageHelper;
