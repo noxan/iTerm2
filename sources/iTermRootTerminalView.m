@@ -17,7 +17,9 @@
 #import "PTYTabView.h"
 
 const CGFloat kHorizontalTabBarHeight = 24;
-const CGFloat kDivisionViewHeight = 1;
+const CGFloat kDefaultLeftTabsWidth = 150;
+// Set to 0 so we dont get the 1 pixel line on top
+const CGFloat kDivisionViewHeight = 0;
 
 static const CGFloat kMinimumToolbeltSizeInPoints = 100;
 static const CGFloat kMinimumToolbeltSizeAsFractionOfWindow = 0.05;
@@ -391,7 +393,7 @@ static const CGFloat kMaximumToolbeltSizeAsFractionOfWindow = 0.5;
                 }
                 self.tabView.frame = tabViewFrame;
                 [self updateDivisionView];
-                
+
                 const CGFloat dragHandleWidth = 3;
                 NSRect leftTabBarDragHandleFrame = NSMakeRect(NSMaxX(self.tabBarControl.frame) - dragHandleWidth,
                                                               0,
@@ -424,7 +426,7 @@ static const CGFloat kMaximumToolbeltSizeAsFractionOfWindow = 0.5;
     [self.tabBarControl setStretchCellsToFit:[iTermPreferences boolForKey:kPreferenceKeyStretchTabsToFillBar]];
     [self.tabBarControl setCellOptimumWidth:[iTermAdvancedSettingsModel optimumTabWidth]];
     self.tabBarControl.smartTruncation = [iTermAdvancedSettingsModel tabTitlesUseSmartTruncation];
-    
+
     DLog(@"repositionWidgets - redraw view");
     // Note: this used to call setNeedsDisplay on each session in the current tab.
     [self setNeedsDisplay:YES];
