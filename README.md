@@ -1,5 +1,5 @@
-A branch of iTerm2 that has borderless rounded
+# iTerm2
 
-<img src="https://a.pomf.cat/kspcgj.png">
+Me doing experiments on iTerm2.
 
-To use, simply select ``` No Title Bar ``` as the style for your window in your profile
+Official repository: https://github.com/gnachman/iTerm2
