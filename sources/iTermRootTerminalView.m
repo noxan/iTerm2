@@ -17,7 +17,7 @@
 #import "PTYTabView.h"
 
 const CGFloat kHorizontalTabBarHeight = 22;
-const CGFloat kDivisionViewHeight = 1;
+const CGFloat kDivisionViewHeight = 0;
 
 static const CGFloat kDefaultToolbeltWidth = 250;
 static const CGFloat kMinimumToolbeltSizeInPoints = 100;
